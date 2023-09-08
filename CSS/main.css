@@ -1,0 +1,69 @@
+@font-face {
+	font-family: 'yekan';
+	src: url('./Fonts/iranyekanwebregular.eot') format('eot'),
+        url('./Fonts/iranyekanwebregular.woff') format('woff'),
+        url('./Fonts/iranyekanwebregular.ttf') format('ttf');
+}
+html {
+    background-color: #EEEEEE;
+}
+body {
+    font-family: 'yekan', sans-serif;
+  }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #3e4357; */
+}
+
+.right-side {
+    margin: .8rem;
+    padding: .5rem .4rem .4rem .3rem;
+}
+.left-side {
+    margin: .8rem .8rem .8rem 1rem;
+    padding: .5rem .4rem .4rem .3rem;
+}
+.left-side-options {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: .3rem;
+    background-color: rgb(255, 196, 0);
+    border-radius: .3rem;
+    padding: .4rem;
+}
+.right-side-options {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: .3rem
+}
+.item {
+    padding: .6rem .5rem 0;
+}
+.left-side-options a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.left-side-options a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sign {
+    padding: .3rem;
+}
+.sign.up{
+    padding-left: .3rem;
+}
+.right-side-options a {
+    color: #00b62e;
+    text-decoration: none;
+}
+
+.right-side-options a:hover {
+    color: #00A0C6;
+    text-decoration: none;
+    cursor: pointer;
+}
