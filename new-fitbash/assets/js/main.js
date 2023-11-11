@@ -122,10 +122,13 @@ const calculateBmi = (e) => {
         } else if(bmi < 30) {
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `بی‌ام‌ای‌تون ${bmi} هست و اضافه وزن دارید 😕`
-        } else(bmi < 40)
+        } else if (bmi < 40){
             calculateMessage.classList.add('color-green')
             calculateMessage.textContent = `بی‌ام‌ای‌تون ${bmi} هست و چاقی زیادی دارید 😕`
-        
+        } else {
+            calculateMessage.classList.add('color-green')
+            calculateMessage.textContent = `بی‌ام‌ای‌تون ${bmi} هست و خیلی خیلی چاقی زیادی دارید 😕`
+        }
 
         // To clear the input field
         calculateCm.value = ''
