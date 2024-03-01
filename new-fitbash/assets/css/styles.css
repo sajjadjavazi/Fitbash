@@ -74,6 +74,7 @@ button,
 input {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+
 }
 
 body {
@@ -342,6 +343,7 @@ img {
   font-weight: var(--font-bold);
   cursor: pointer;
   transition: background .3s;
+  border-radius: 7px;
 }
 
 .button:hover {
@@ -389,6 +391,7 @@ img {
   padding: 1.5rem 2rem;
   border: 2px solid transparent;
   transition: background .5s, border .4s;
+  border-radius: 5px;
 }
 
 .program__img {
@@ -551,6 +554,7 @@ img {
   row-gap: 2rem;
   background-color: hsla(79, 6%, 64%, .07);
   padding: 2rem 2.5rem;
+  border-radius: 5px;
 }
 
 .pricing__img {
@@ -564,6 +568,7 @@ img {
   border-radius: 50%;
   place-items: center;
   margin-bottom: 1rem;
+
 }
 
 .pricing__title {
@@ -598,6 +603,7 @@ img {
 
 .pricing__button {
   background-color: var(--title-color);
+  border-radius: 7px;
 }
 
 .pricing__button:hover {
@@ -650,6 +656,7 @@ img {
 .calculate__box {
   position: relative;
   border: 2px solid var(--first-color-light);
+  border-radius: 7px;
 }
 
 .calculate__input {
@@ -679,6 +686,7 @@ img {
 
 .calculate__form .button {
   margin-top: 1.5rem;
+  border-radius: 7px;
 }
 
 .calculate__img {
@@ -732,6 +740,7 @@ img {
 .footer__input {
   padding: 20px 56px 20px 24px;
   border: 2px solid var(--first-color-light);
+  border-radius: 7px;
   background-color: transparent;
   color: var(--text-color);
   outline: none;
@@ -780,7 +789,7 @@ img {
 
 .footer__social-link {
   display: inline-flex;
-  padding: .35rem ;
+  padding: .35rem;
   background-color: var(--first-color);
   border-radius: 50%;
   font-size: 1.2rem;
@@ -1126,7 +1135,7 @@ img {
   .choose__img {
     width: 450px;
     margin: 0 0 0 auto;
-  }  
+  }
 
   .choose__triangle {
     height: 800px;
