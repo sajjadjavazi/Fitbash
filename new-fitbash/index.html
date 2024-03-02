@@ -341,12 +341,11 @@
             <div class="calculate__container container grid">
                 <div class="calculate__content">
                     <div class="section__titles">
-                        <h1 class="section__title-border">محاسبه کردن</h1>
-                        <h1 class="section__title">بی‌ام‌ای شما</h1>
+                        <h1 class="section__title-border">شخصیت تاریخی</h1>
+                        <h1 class="section__title">شما‌!</h1>
                     </div>
-
                     <p class="calculate__description">
-                        شاخص توده بدنی یا بی‌ام‌آی سنجشی آماری برای مقایسه وزن و قد یک فرد است.
+                        از هوش‌مصنوعی فیت‌باش بخواهید تا که شخصیت تاریخی شما را بگوید.
                     </p>
 
                     <form action="" class="calculate__form" id="calculate-form">
@@ -357,6 +356,23 @@
                         <div class="calculate__box">
                             <input type="number" placeholder="وزن" class="calculate__input" id="calculate-kg">
                             <label for="" class="calculate__label">کیلوگرم</label>
+                        </div>
+                        <!-- <div class="calculate__gender">
+                            <input type="radio" name="man" id="man" value="man">
+                            <label for="#">مرد</label>
+                            <input type="radio" name="woman" id="woman" value="woman">
+                            <label for="#">زن</label>
+                        </div> -->
+                        <div class="radio-input">
+                            <label for="#" class="radio__lable">زن</label>
+                            <input type="radio" id="value-1" name="value-radio" value="woman">
+                            <div class="circle">
+                            </div>
+                            <label for="#" class="radio__lable">مرد</label>
+                            <input checked="" type="radio" id="value-2" name="value-radio" value="man">
+                            <div class="circle">
+                            </div>
+
                         </div>
                         <button type="submit" class="button button__flex">
                             محاسبه <i class="ri-arrow-left-line"></i>

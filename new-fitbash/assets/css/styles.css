@@ -677,6 +677,63 @@ img {
   -moz-appearance: textfield;
 }
 
+/* Gender radio */
+
+.radio-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  border: 2px solid var(--first-color-light);
+  padding: 20px 56px 20px 24px;
+  border-radius: 7px;
+}
+
+.radio-input input {
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: #494949;
+  box-shadow: inset 2px 5px 10px rgb(105, 105, 105);
+  border-radius: 50%;
+  transition: .4s ease-in-out;
+}
+
+.radio__lable {
+  padding-right: .6rem;
+  color: white;
+}
+
+.radio-input input:hover {
+  scale: 1.2;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.radio-input .circle {
+  padding: auto;
+  position: relative;
+  top: 0.01em;
+  left: -1.07em;
+  width: 0.6em;
+  height: 0.6em;
+  background-color: var(--first-color-light);
+  scale: 0;
+  border-radius: 10px;
+  transition: .4s ease-in-out;
+}
+
+.radio-input input:checked {
+  box-shadow: none;
+  border: 1px solid var(--first-color-light);
+}
+
+.radio-input input:checked+.circle {
+  transform: rotate(360deg);
+  scale: 1;
+}
+
+/* ---------------------- */
 .calculate__label {
   position: absolute;
   left: 1.5rem;
@@ -691,6 +748,7 @@ img {
 
 .calculate__img {
   width: 200px;
+  padding-top: 6rem;
   justify-self: center;
 }
 
@@ -950,6 +1008,15 @@ img {
     grid-column: 1 / 3;
   }
 
+  .calculate__img {
+    width: 270px;
+  }
+
+  .radio-input {
+    display: flex;
+    justify-content: right;
+  }
+
   .footer__container {
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
@@ -1055,6 +1122,11 @@ img {
 
   .choose__triangle-3 {
     width: 145px;
+  }
+
+
+  .calculate__img {
+    width: 300px;
   }
 
   .footer {
