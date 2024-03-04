@@ -87,7 +87,7 @@ const calculateForm = document.getElementById('calculate-form'),
     calculateCm = document.getElementById('calculate-cm'),
     calculateKg = document.getElementById('calculate-kg'),
     calculateMessage = document.getElementById('calculate-message'),
-    selectedGender = document.querySelector('.gender:checked').value;
+    selectedGender = document.querySelector('.gender:checked')
 
 const calculateBmi = (e) => {
     e.preventDefault()
@@ -99,37 +99,59 @@ const calculateBmi = (e) => {
         calculateMessage.classList.add('color-red')
 
         // Show message
-        calculateMessage.textContent = 'قد و وزن خود را وارد کنید👨🏻‍💻 In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.'
+        calculateMessage.textContent = 'قد و وزن خود را وارد کنید👨🏻‍💻'
 
         // Remove message three seconds
         setTimeout(() => {
             calculateMessage.textContent = ''
         }, 3000)
     } else {
-        // BMI Formula
-        const cm = calculateCm.value / 100,
-            kg = calculateKg.value,
-            bmi = Math.round(kg / (cm * cm))
 
-        // Show your health status
-        if (bmi < 18.5) {
-            // Add color and display message
+        const cm = calculateCm.value,
+            kg = calculateKg.value,
+            sg = selectedGender.value
+
+
+        //Chat-GPT Message
+
+        // API key
+        const apiKey = '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';
+
+        // Define the function to handle API response and update the HTML
+        function handleApiResponse(response) {
+
+            // Extract the content from the API response
+            const content = response.choices[0].message.content;
+
+            // Update the HTML with the API response
             calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `بی‌ام‌ای‌تون ${bmi} هست و شما لاغر هستید 😔`
-        } else if (bmi < 25) {
-            calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `بی‌ام‌ای‌تون ${bmi} هست و بدن متناسبی دارید 🥳`
-        } else if (bmi < 30) {
-            calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `بی‌ام‌ای‌تون ${bmi} هست و اضافه وزن دارید 😕`
-        } else if (bmi < 40) {
-            calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `بی‌ام‌ای‌تون ${bmi} هست و چاقی زیادی دارید 😕`
-        } else {
-            calculateMessage.classList.add('color-green')
-            calculateMessage.textContent = `بی‌ام‌ای‌تون ${bmi} هست و خیلی خیلی چاقی زیادی دارید 😕`
+            calculateMessage.textContent = content;
         }
 
+        // Define the main function to make the API call
+        async function generatedAnswer() {
+            // Import 'openai'
+            const openaiModule = await import('https://cdn.skypack.dev/openai');
+            const { OpenAI } = openaiModule;
+
+            // Create an instance of OpenAI
+            const openai = new OpenAI({
+                apiKey: apiKey,
+                language: 'fa',
+                dangerouslyAllowBrowser: true,
+            });
+
+            // Make the API call
+            openai.chat.completions.create({
+                model: "gpt-3.5-turbo",
+                messages: [
+                    { role: "user", content: `من اطلاعات ویژگی‌های جسمی خودم را با اندازه وزن ${kg} کیلوگرم و قد ${cm} سانتی‌متر ارائه می‌دهم. در انتظار یک پاسخ هوش مصنوعی هستم که تنها با یک اجرا، به صورت هوشمندانه نام و بیوگرافی کوتاه یک شخصیت تاریخی ${sg} را با ابراز تحسین به من ارائه دهد.` },
+                ],
+            }).then(handleApiResponse);
+        }
+        // Call the main function when the script is loaded
+        generatedAnswer();
+        
         // To clear the input field
         calculateCm.value = ''
         calculateKg.value = ''
@@ -137,7 +159,7 @@ const calculateBmi = (e) => {
         // Remove message four seconds
         setTimeout(() => {
             calculateMessage.textContent = ''
-        }, 4000)
+        }, 50000)
     }
 }
 

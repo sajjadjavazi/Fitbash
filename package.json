@@ -1,0 +1,15 @@
+{
+  "name": "fitbash",
+  "version": "1.0.0",
+  "description": "My new project is named Fitbash! I am building a community based on this website. actually, The purpose of this website is to help people in our community and make them more active in their life...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "openai": "^4.28.4"
+  }
+}

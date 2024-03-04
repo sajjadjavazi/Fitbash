@@ -748,7 +748,7 @@ img {
 
 .calculate__img {
   width: 200px;
-  padding-top: 6rem;
+  padding-top: 9rem;
   justify-self: center;
 }
 
@@ -1243,6 +1243,10 @@ img {
 
   .calculate__form {
     width: 505px;
+  }
+
+  .calculate__message {
+    z-index: 5;
   }
 
   .calculate__img {
