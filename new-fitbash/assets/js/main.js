@@ -195,7 +195,7 @@ const calculateBmi = (e) => {
         // Remove message four seconds
         setTimeout(() => {
             calculateMessage.textContent = ''
-        }, 50000)
+        }, 70000)
     }
 }
 
