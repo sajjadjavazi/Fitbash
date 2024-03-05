@@ -86,8 +86,27 @@ sr.reveal(`.choose__content , .calculate__img`, { origin: 'left' })
 const calculateForm = document.getElementById('calculate-form'),
     calculateCm = document.getElementById('calculate-cm'),
     calculateKg = document.getElementById('calculate-kg'),
-    calculateMessage = document.getElementById('calculate-message'),
-    selectedGender = document.querySelector('.gender:checked')
+    calculateMessage = document.getElementById('calculate-message')
+
+const radioButtons = document.querySelectorAll('.gender');
+let lastSelectedValue = null;
+
+function setupRadioButtons() {
+    var prev = null;
+    for (var i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].addEventListener('change', function () {
+            (prev) ? prev.value : null;
+            if (this !== prev) {
+                prev = this;
+                lastSelectedValue = this.value;
+            }
+            // console.log(lastSelectedValue);
+        });
+    }
+}
+// Call the setup function to set up the event listeners
+setupRadioButtons();
+
 
 const calculateBmi = (e) => {
     e.preventDefault()
@@ -100,16 +119,32 @@ const calculateBmi = (e) => {
 
         // Show message
         calculateMessage.textContent = 'قد و وزن خود را وارد کنید👨🏻‍💻'
-
         // Remove message three seconds
         setTimeout(() => {
             calculateMessage.textContent = ''
         }, 3000)
+
     } else {
 
+        // let selectedValue
+
+        // function handleRadioChange() {
+        //     // Iterate through the radio buttons to find the checked one
+        //     radioButtons.forEach(radioButton => {
+        //         if (radioButton.checked) {
+        //             selectedValue = radioButton.value;
+        //         }
+        //     });
+        // }
+
+        // // Add event listeners to each radio button to detect changes
+        // radioButtons.forEach(radioButton => {
+        //     radioButton.addEventListener('change', handleRadioChange);
+        // });
+
         const cm = calculateCm.value,
-            kg = calculateKg.value,
-            sg = selectedGender.value
+            kg = calculateKg.value
+
 
 
         //Chat-GPT Message
@@ -130,6 +165,7 @@ const calculateBmi = (e) => {
 
         // Define the main function to make the API call
         async function generatedAnswer() {
+
             // Import 'openai'
             const openaiModule = await import('https://cdn.skypack.dev/openai');
             const { OpenAI } = openaiModule;
@@ -145,13 +181,13 @@ const calculateBmi = (e) => {
             openai.chat.completions.create({
                 model: "gpt-3.5-turbo",
                 messages: [
-                    { role: "user", content: `من اطلاعات ویژگی‌های جسمی خودم را با اندازه وزن ${kg} کیلوگرم و قد ${cm} سانتی‌متر ارائه می‌دهم. در انتظار یک پاسخ هوش مصنوعی هستم که تنها با یک اجرا، به صورت هوشمندانه نام و بیوگرافی کوتاه یک شخصیت تاریخی ${sg} را با ابراز تحسین به من ارائه دهد.` },
+                    { role: "user", content: `من اطلاعات ویژگی‌های جسمی خودم را با اندازه وزن ${kg} کیلوگرم و قد ${cm} سانتی‌متر ارائه می‌دهم. در انتظار یک پاسخ هوش مصنوعی هستم که تنها با یک اجرا، به صورت هوشمندانه نام و بیوگرافی کوتاه یک شخصیت تاریخی ${lastSelectedValue} را با ابراز تحسین به من ارائه دهد.` },
                 ],
             }).then(handleApiResponse);
         }
         // Call the main function when the script is loaded
         generatedAnswer();
-        
+
         // To clear the input field
         calculateCm.value = ''
         calculateKg.value = ''
