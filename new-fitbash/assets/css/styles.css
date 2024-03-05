@@ -638,8 +638,13 @@ img {
   row-gap: 4rem;
 }
 
-.calculate__content .section__titles {
+.section__titles {
   margin-bottom: 2rem;
+  text-align: center;
+}
+
+.calculate__content {
+  margin-bottom: 22rem;
   text-align: center;
 }
 
@@ -748,7 +753,6 @@ img {
 
 .calculate__img {
   width: 200px;
-  padding-top: 12rem;
   justify-self: center;
 }
 
@@ -1235,10 +1239,6 @@ img {
   .pricing__card {
     padding: 2rem 3.5rem;
     row-gap: 2.5rem;
-  }
-
-  .calculate__content {
-    margin-bottom: 4rem;
   }
 
   .calculate__description {
