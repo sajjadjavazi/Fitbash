@@ -150,7 +150,7 @@ const calculateBmi = (e) => {
         //Chat-GPT Message
 
         // API key
-        const apiKey = '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';
+        const apiKey = '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';
 
         // Define the function to handle API response and update the HTML
         function handleApiResponse(response) {
