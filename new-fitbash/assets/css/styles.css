@@ -1,6 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Red+Hat+Display:wght@400;700;900&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/iransans-fontface@0.1.1/css/iransans/iransans-fontface.min.css");
+@import url('https://fonts.cdnfonts.com/css/iransansx');
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
@@ -22,7 +22,7 @@
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'iransans', sans-serif;
+  --body-font: 'IRANSansX', sans-serif;
   --second-font: 'lalezar', cursive;
   --biggest-font-size: 2rem;
   --bigger-font-size: 1.5rem;
